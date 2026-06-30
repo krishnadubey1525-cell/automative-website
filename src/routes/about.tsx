@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageBanner } from "@/components/PageBanner";
 import { CtaBanner } from "./index";
 import teamImg from "@/assets/about-team.jpg";
+import teamAlex from "@/assets/team-alex.jpg";
+import teamJordan from "@/assets/team-jordan.jpg";
 import { ShieldCheck, Award, Users, Wrench, Heart, Target } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -29,8 +31,8 @@ const stats = [
 ];
 
 const team = [
-  { name: "Alex Carter", role: "Lead Mechanic", img: teamImg },
-  { name: "Jordan Hayes", role: "Diagnostics Specialist", img: teamImg },
+  { name: "Alex Carter", role: "Lead Mechanic", img: teamAlex },
+  { name: "Jordan Hayes", role: "Diagnostics Specialist", img: teamJordan },
   { name: "Sam Patel", role: "Fleet Technician", img: teamImg },
 ];
 
