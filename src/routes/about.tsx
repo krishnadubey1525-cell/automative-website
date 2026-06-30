@@ -8,8 +8,8 @@ import { useEffect, useRef, useState } from "react";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — [NEW BRAND NAME] Mobile Mechanic" },
-      { name: "description", content: "Meet the dealership-trained, fully-insured mobile mechanic team behind [NEW BRAND NAME]. Over a decade of trusted automotive care." },
+      { title: "About Us — Roadside Rescue Mobile Mechanic" },
+      { name: "description", content: "Meet the dealership-trained, fully-insured mobile mechanic team behind Roadside Rescue. Over a decade of trusted automotive care." },
     ],
   }),
   component: About,
@@ -87,7 +87,7 @@ function About() {
               Built on <span className="text-primary">trust</span> and craftsmanship.
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              [NEW BRAND NAME] was founded with one simple idea: car repairs shouldn't waste your day.
+              Roadside Rescue was founded with one simple idea: car repairs shouldn't waste your day.
               Our dealership-trained mechanics bring a fully-equipped workshop to your driveway,
               office or roadside — delivering the same quality you'd expect from a main dealer,
               without the wait or the mark-up.
@@ -122,7 +122,7 @@ function About() {
             {values.map((v, i) => {
               const Icon = v.icon;
               return (
-                <div key={v.title} className="bg-white rounded-2xl p-7 shadow-card hover-lift animate-fade-up" style={{ animationDelay: `${i * 0.1}s` }}>
+                <div key={v.title} className="bg-white rounded-2xl p-7 shadow-card hover-card-effects animate-fade-up" style={{ animationDelay: `${i * 0.1}s` }}>
                   <div className="w-14 h-14 rounded-xl bg-primary-gradient flex items-center justify-center mb-5">
                     <Icon className="w-7 h-7 text-primary-foreground" />
                   </div>
@@ -180,7 +180,7 @@ function About() {
               { icon: Wrench, label: "Genuine Parts" },
               { icon: Users, label: "4.9★ Rated" },
             ].map(({ icon: Icon, label }) => (
-              <div key={label} className="bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-card hover-lift">
+              <div key={label} className="bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-card hover-card-effects">
                 <Icon className="w-10 h-10 text-primary mb-3" />
                 <p className="font-semibold text-navy">{label}</p>
               </div>

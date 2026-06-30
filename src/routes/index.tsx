@@ -3,6 +3,7 @@ import {
   Calendar, Phone, Truck, BadgeDollarSign, Clock, Award, Building2, AlertTriangle,
   ArrowRight, Star, ShieldCheck,
 } from "lucide-react";
+import { useState, useEffect } from "react";
 import heroImg from "@/assets/hero-mechanic.jpg";
 import svcMobile from "@/assets/service-mobile.jpg";
 import svcServicing from "@/assets/service-servicing.jpg";
@@ -10,12 +11,13 @@ import svcBrakes from "@/assets/service-brakes.jpg";
 import svcDiag from "@/assets/service-diagnostics.jpg";
 import svcBattery from "@/assets/service-battery.jpg";
 import svcFleet from "@/assets/service-fleet.jpg";
+import aboutTeam from "@/assets/about-team.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "[NEW BRAND NAME] — Mobile Mechanic [City] · We Come To You" },
-      { name: "description", content: "[Region]'s premier mobile mechanic. Same-day servicing, brakes, diagnostics, batteries and roadside repairs at your home, office or roadside." },
+      { title: "Roadside Rescue — Mobile Mechanic Canberra · We Come To You" },
+      { name: "description", content: "Canberra's premier mobile mechanic. Same-day servicing, brakes, diagnostics, batteries and roadside repairs at your home, office or roadside." },
     ],
   }),
   component: Home,
@@ -38,31 +40,59 @@ const servicesPreview = [
 ];
 
 const testimonials = [
-  { name: "Sarah M.", location: "[Suburb]", text: "Showed up on time, fixed my brakes in the driveway and saved me hundreds compared to the dealership.", rating: 5 },
-  { name: "James K.", location: "[Suburb]", text: "Honest, professional and fast. Diagnosed my electrical issue same morning. Highly recommend.", rating: 5 },
-  { name: "Priya R.", location: "[Suburb]", text: "Logbook service done at my office while I worked. Couldn't be more convenient.", rating: 5 },
+  { name: "Sarah M.", location: "Belconnen", text: "Showed up on time, fixed my brakes in the driveway and saved me hundreds compared to the dealership.", rating: 5 },
+  { name: "James K.", location: "Gungahlin", text: "Honest, professional and fast. Diagnosed my electrical issue same morning. Highly recommend.", rating: 5 },
+  { name: "Priya R.", location: "Tuggeranong", text: "Logbook service done at my office while I worked. Couldn't be more convenient.", rating: 5 },
 ];
 
 const gallery = [svcDiag, svcBrakes, svcMobile, svcServicing, svcBattery, svcFleet];
 
+const heroBackgrounds = [
+  heroImg,
+  svcMobile,
+  svcServicing,
+  svcDiag,
+  aboutTeam,
+];
+
 function Home() {
+  const [bgIndex, setBgIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setBgIndex((prev) => (prev + 1) % heroBackgrounds.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <>
       {/* HERO */}
-      <section className="relative bg-hero-gradient text-white overflow-hidden">
+      <section className="relative bg-navy-deep text-white overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImg} alt="" className="w-full h-full object-cover opacity-25" />
-          <div className="absolute inset-0 bg-hero-gradient opacity-80" />
-          <div className="absolute inset-0 dot-pattern opacity-30" />
+          {heroBackgrounds.map((bg, idx) => (
+            <img
+              key={bg}
+              src={bg}
+              alt=""
+              className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
+                idx === bgIndex ? "opacity-45 scale-100 animate-ken-burns" : "opacity-0 scale-105"
+              }`}
+            />
+          ))}
+          {/* Gradients to blend and provide contrast */}
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/75 to-transparent opacity-95 sm:opacity-90" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-transparent to-transparent opacity-70" />
+          <div className="absolute inset-0 dot-pattern opacity-20" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-40">
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur text-xs font-semibold uppercase tracking-wider animate-fade-up">
               <ShieldCheck className="w-3.5 h-3.5 text-primary-glow" />
-              [Region]'s Premier Mobile Mechanic
+              Canberra's Premier Mobile Mechanic
             </span>
-            <h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] animate-fade-up" style={{ animationDelay: "0.1s" }}>
-              Mobile Mechanic [City]
+            <h1 className="mt-6 text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] animate-fade-up" style={{ animationDelay: "0.1s" }}>
+              Mobile Mechanic Canberra
               <span className="block text-primary-glow">We Come To You</span>
             </h1>
             <p className="mt-6 text-lg text-white/80 max-w-2xl animate-fade-up" style={{ animationDelay: "0.2s" }}>
@@ -70,11 +100,11 @@ function Home() {
               delivered to your driveway. Fully insured, dealership-trained, and ready 7 days a week.
             </p>
             <div className="mt-8 flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-              <Link to="/contact" className="btn-primary">
+              <Link to="/contact" className="btn-primary shine-button">
                 <Calendar className="w-5 h-5" />
                 Book Mobile Mechanic
               </Link>
-              <a href="tel:+15551234567" className="btn-outline-light">
+              <a href="tel:+61416562596" className="btn-outline-light shine-button">
                 <Phone className="w-5 h-5" />
                 Call Now
               </a>
@@ -88,7 +118,7 @@ function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14 animate-fade-up">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy">
-              [Region]'s <span className="text-primary">Trusted Mobile Mechanics</span>
+              Canberra's <span className="text-primary">Trusted Mobile Mechanics</span>
             </h2>
             <p className="mt-4 text-muted-foreground text-lg">
               Honest service, expert work, and the convenience of having it all done at your doorstep.
@@ -100,7 +130,7 @@ function Home() {
               return (
                 <div
                   key={f.title}
-                  className="bg-white rounded-2xl p-7 shadow-card hover-lift border border-border/50 animate-fade-up"
+                  className="bg-white rounded-2xl p-7 shadow-card hover-card-effects border border-border/50 animate-fade-up"
                   style={{ animationDelay: `${i * 0.08}s` }}
                 >
                   <div
@@ -240,10 +270,10 @@ export function CtaBanner() {
           Book online or call now — we'll come to you, same day in most cases.
         </p>
         <div className="mt-8 flex flex-wrap gap-4 justify-center animate-fade-up">
-          <Link to="/contact" className="btn-primary">
+          <Link to="/contact" className="btn-primary shine-button">
             <Calendar className="w-5 h-5" /> Book Now
           </Link>
-          <a href="tel:+15551234567" className="btn-outline-light">
+          <a href="tel:+61416562596" className="btn-outline-light shine-button">
             <Phone className="w-5 h-5" /> Call Now
           </a>
         </div>

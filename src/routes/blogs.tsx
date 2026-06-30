@@ -18,8 +18,8 @@ export const posts = [
 export const Route = createFileRoute("/blogs")({
   head: () => ({
     meta: [
-      { title: "Blogs — [NEW BRAND NAME] Mobile Mechanic" },
-      { name: "description", content: "Practical car care tips, maintenance guides and mechanic-approved advice from the [NEW BRAND NAME] team." },
+      { title: "Blogs — Roadside Rescue Mobile Mechanic" },
+      { name: "description", content: "Practical car care tips, maintenance guides and mechanic-approved advice from the Roadside Rescue team." },
     ],
   }),
   component: Blogs,

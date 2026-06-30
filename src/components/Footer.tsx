@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Wrench } from "lucide-react";
-import { BRAND_NAME, PHONE_NUMBER, PHONE_TEL } from "./Header";
+import { BRAND_NAME, PHONE_NUMBER, PHONE_TEL, LogoIcon } from "./Header";
 
 const services = [
   "Mobile Mechanic",
@@ -19,13 +19,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-primary-gradient flex items-center justify-center">
-                <Wrench className="w-5 h-5" />
-              </div>
+              <LogoIcon />
               <span className="font-display font-bold text-lg">{BRAND_NAME}</span>
             </div>
             <p className="text-white/70 text-sm leading-relaxed">
-              [Region]'s trusted mobile mechanic — bringing professional automotive
+              Canberra's trusted mobile mechanic — bringing professional automotive
               repair and servicing right to your driveway, 7 days a week.
             </p>
           </div>
@@ -61,11 +59,11 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 mt-0.5 text-primary-glow flex-shrink-0" />
-                <a href="mailto:hello@brand.com" className="hover:text-white">hello@brand.com</a>
+                <a href="mailto:contact@roadside-rescue.com.au" className="hover:text-white">contact@roadside-rescue.com.au</a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 mt-0.5 text-primary-glow flex-shrink-0" />
-                <span>Servicing [City] and surrounding areas</span>
+                <span>Servicing Canberra and surrounding areas</span>
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="w-4 h-4 mt-0.5 text-primary-glow flex-shrink-0" />

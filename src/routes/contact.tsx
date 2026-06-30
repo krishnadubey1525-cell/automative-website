@@ -10,7 +10,7 @@ export const Route = createFileRoute("/contact")({
   validateSearch: searchSchema,
   head: () => ({
     meta: [
-      { title: "Contact Us — [NEW BRAND NAME] Mobile Mechanic" },
+      { title: "Contact Us — Roadside Rescue Mobile Mechanic" },
       { name: "description", content: "Book a mobile mechanic or get a free quote. Call, WhatsApp, or use our quick contact form — we'll be in touch fast." },
     ],
   }),
@@ -55,7 +55,7 @@ function Contact() {
                 className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-5"
               >
                 <Field label="Full name" required><input required type="text" className="form-input" placeholder="Jane Smith" /></Field>
-                <Field label="Phone" required><input required type="tel" className="form-input" placeholder="(555) 000-0000" /></Field>
+                <Field label="Phone" required><input required type="tel" className="form-input" placeholder="0416 562 596" /></Field>
                 <Field label="Email" className="sm:col-span-2"><input type="email" className="form-input" placeholder="you@example.com" /></Field>
                 <Field label="Service type" className="sm:col-span-2">
                   <select className="form-input" defaultValue={preset || ""}>
@@ -70,7 +70,7 @@ function Contact() {
                   <button type="submit" className="btn-primary">
                     <Send className="w-4 h-4" /> Send Request
                   </button>
-                  <a href="https://wa.me/15551234567" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-semibold border-2 border-[oklch(0.7_0.17_150)] text-[oklch(0.55_0.17_150)] hover:bg-[oklch(0.7_0.17_150)] hover:text-white transition-smooth hover:scale-105">
+                  <a href="https://wa.me/61416562596" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-semibold border-2 border-[oklch(0.7_0.17_150)] text-[oklch(0.55_0.17_150)] hover:bg-[oklch(0.7_0.17_150)] hover:text-white transition-smooth hover:scale-105">
                     <MessageCircle className="w-4 h-4" /> WhatsApp Us
                   </a>
                 </div>
@@ -99,9 +99,9 @@ function Contact() {
           {/* Info */}
           <div className="lg:col-span-2 space-y-5">
             {[
-              { icon: Phone, title: "Call us", value: "(555) 123-4567", href: "tel:+15551234567" },
-              { icon: Mail, title: "Email", value: "hello@brand.com", href: "mailto:hello@brand.com" },
-              { icon: MapPin, title: "Service area", value: "[City] and surrounding suburbs" },
+              { icon: Phone, title: "Call us", value: "+61 416 562 596", href: "tel:+61416562596" },
+              { icon: Mail, title: "Email", value: "contact@roadside-rescue.com.au", href: "mailto:contact@roadside-rescue.com.au" },
+              { icon: MapPin, title: "Service area", value: "Canberra and surrounding suburbs" },
               { icon: Clock, title: "Hours", value: "Mon – Sun · 7am – 7pm" },
             ].map((b, i) => {
               const Icon = b.icon;
@@ -125,7 +125,7 @@ function Contact() {
       {/* Map placeholder */}
       <section className="pb-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-3xl overflow-hidden shadow-card border border-border/50 relative aspect-[16/7] bg-soft-blue">
+          <div className="rounded-3xl overflow-hidden shadow-card border border-border/50 relative aspect-[16/9] md:aspect-[16/7] min-h-[300px] md:min-h-[400px] bg-soft-blue">
             <iframe
               title="Service area map"
               src="https://www.openstreetmap.org/export/embed.html?bbox=-0.2%2C51.45%2C-0.05%2C51.55&amp;layer=mapnik"

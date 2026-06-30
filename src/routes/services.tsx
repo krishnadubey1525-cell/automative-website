@@ -12,7 +12,7 @@ import svcFleet from "@/assets/service-fleet.jpg";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — [NEW BRAND NAME] Mobile Mechanic" },
+      { title: "Services — Roadside Rescue Mobile Mechanic" },
       { name: "description", content: "Full list of mobile mechanic services: servicing, logbook, brakes, batteries, diagnostics, pre-purchase inspections, fleet and emergency roadside repairs." },
     ],
   }),

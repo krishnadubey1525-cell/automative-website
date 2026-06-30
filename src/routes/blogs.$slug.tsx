@@ -13,7 +13,7 @@ export const Route = createFileRoute("/blogs/$slug")({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.post.title} — [NEW BRAND NAME] Blog` },
+          { title: `${loaderData.post.title} — Roadside Rescue Blog` },
           { name: "description", content: loaderData.post.excerpt },
           { property: "og:title", content: loaderData.post.title },
           { property: "og:description", content: loaderData.post.excerpt },
@@ -55,7 +55,7 @@ function Post() {
           <div className="prose prose-lg max-w-none text-navy/85 leading-relaxed space-y-5">
             <p className="text-xl text-muted-foreground">{post.excerpt}</p>
             <p>
-              At [NEW BRAND NAME], we see hundreds of vehicles every month — and the same
+              At Roadside Rescue, we see hundreds of vehicles every month — and the same
               preventable issues keep showing up. The good news? Most of them come down to a
               handful of habits any driver can build into their routine.
             </p>
