@@ -7,13 +7,12 @@ import svcServicing from "@/assets/service-servicing.jpg";
 import svcBrakes from "@/assets/service-brakes.jpg";
 import svcDiag from "@/assets/service-diagnostics.jpg";
 import svcBattery from "@/assets/service-battery.jpg";
-import svcFleet from "@/assets/service-fleet.jpg";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Roadside Rescue Mobile Mechanic" },
-      { name: "description", content: "Full list of mobile mechanic services: servicing, logbook, brakes, batteries, diagnostics, pre-purchase inspections, fleet and emergency roadside repairs." },
+      { title: "Services — Onsite auto repair Mobile Mechanic" },
+      { name: "description", content: "Full list of mobile mechanic services: servicing, logbook, brakes, batteries, diagnostics, pre-purchase inspections, and emergency roadside repairs." },
     ],
   }),
   component: Services,
@@ -28,7 +27,6 @@ const services = [
   { slug: "diagnostics", img: svcDiag, title: "Diagnostics", desc: "Advanced computer diagnostics to pinpoint warning lights, electrical faults and intermittent issues." },
   { slug: "oil-changes", img: svcServicing, title: "Oil Changes", desc: "Quick, clean oil and filter changes with full or semi-synthetic oils to suit your engine." },
   { slug: "pre-purchase-inspections", img: svcDiag, title: "Pre-Purchase Inspections", desc: "Detailed inspection reports before you buy — drive away knowing exactly what you're getting." },
-  { slug: "fleet-servicing", img: svcFleet, title: "Fleet Servicing", desc: "Scheduled fleet maintenance with detailed reporting to keep your business vehicles on the road." },
   { slug: "emergency-roadside", img: svcMobile, title: "Emergency Roadside Repairs", desc: "Stranded? We're on the way — fast roadside response to get you moving again, 7 days a week." },
 ];
 

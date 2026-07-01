@@ -6,27 +6,22 @@ const navLinks = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About Us" },
   { to: "/services", label: "Services" },
-  { to: "/blogs", label: "Blogs" },
   { to: "/contact", label: "Contact Us" },
 ] as const;
 
-export const PHONE_NUMBER = "+61 416 562 596";
-export const PHONE_TEL = "+61416562596";
-export const BRAND_NAME = "Roadside Rescue";
+export const PHONE_NUMBER = "+1 (587) 876-9062";
+export const PHONE_TEL = "+15878769062";
+export const PHONE_NUMBER_2 = "+1 (587) 377-0800";
+export const PHONE_TEL_2 = "+15873770800";
+export const BRAND_NAME = "Onsite auto repair";
 
 export function LogoIcon() {
   return (
-    <svg className="w-10 h-10 shadow-glow rounded-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="50" cy="50" r="50" fill="url(#logo-grad)" />
-      <path d="M15 60 C17 60 18 59 19 58 C21 54 25 50 31 50 C37 50 41 54 43 58 C44 59 45 60 47 60 L57 60 C59 60 60 59 61 58 C63 54 67 50 73 50 C79 50 83 54 85 58 C86 59 87 60 89 60 L91 60 C92 60 93 59 93 58 C91 48 83 41 71 39 C62 36 50 31 38 34 C28 36 21 42 17 48 C15 52 14 55 14 58 C14 59 14 60 15 60 Z" fill="white" />
-      <path d="M10 65 L90 65" stroke="oklch(0.78 0.16 240)" strokeWidth="4" stroke-linecap="round" />
-      <defs>
-        <linearGradient id="logo-grad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="oklch(0.16 0.04 258)" />
-          <stop offset="100%" stopColor="oklch(0.28 0.1 245)" />
-        </linearGradient>
-      </defs>
-    </svg>
+    <img 
+      src="/logo.jpg" 
+      alt="Onsite auto repair logo" 
+      className="w-12 h-12 object-contain rounded-xl bg-white shadow-sm border border-border/40 p-0.5" 
+    />
   );
 }
 
@@ -66,6 +61,10 @@ export function Header() {
               <Phone className="w-4 h-4" />
               <span>{PHONE_NUMBER}</span>
             </a>
+            <a href={`tel:${PHONE_TEL_2}`} className="hidden md:inline-flex btn-outline-dark !py-2.5 !px-5 text-sm">
+              <Phone className="w-4 h-4" />
+              <span>{PHONE_NUMBER_2}</span>
+            </a>
             <button
               type="button"
               aria-label="Toggle menu"
@@ -93,8 +92,11 @@ export function Header() {
                 {l.label}
               </Link>
             ))}
-            <a href={`tel:${PHONE_TEL}`} className="btn-primary shine-button mt-2 text-sm">
+            <a href={`tel:${PHONE_TEL}`} className="btn-primary shine-button mt-2 text-sm justify-center">
               <Phone className="w-4 h-4" /> {PHONE_NUMBER}
+            </a>
+            <a href={`tel:${PHONE_TEL_2}`} className="btn-outline-dark mt-2 text-sm justify-center">
+              <Phone className="w-4 h-4" /> {PHONE_NUMBER_2}
             </a>
           </nav>
         )}

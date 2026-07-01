@@ -67,10 +67,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Roadside Rescue — Mobile Mechanic, We Come To You" },
+      { title: "Onsite auto repair — Mobile Mechanic, We Come To You" },
       { name: "description", content: "Professional mobile mechanic and roadside automotive repair. We come to you — servicing, brakes, diagnostics, batteries and more, 7 days a week." },
-      { name: "author", content: "Roadside Rescue" },
-      { property: "og:title", content: "Roadside Rescue — Mobile Mechanic" },
+      { name: "author", content: "Onsite auto repair" },
+      { property: "og:title", content: "Onsite auto repair — Mobile Mechanic" },
       { property: "og:description", content: "Trusted mobile mechanic — repairs and servicing at your home, office or roadside." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

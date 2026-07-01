@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Wrench } from "lucide-react";
-import { BRAND_NAME, PHONE_NUMBER, PHONE_TEL, LogoIcon } from "./Header";
+import { BRAND_NAME, PHONE_NUMBER, PHONE_TEL, PHONE_NUMBER_2, PHONE_TEL_2, LogoIcon } from "./Header";
 
 const services = [
   "Mobile Mechanic",
@@ -23,7 +23,7 @@ export function Footer() {
               <span className="font-display font-bold text-lg">{BRAND_NAME}</span>
             </div>
             <p className="text-white/70 text-sm leading-relaxed">
-              Canberra's trusted mobile mechanic — bringing professional automotive
+              Calgary's trusted mobile mechanic — bringing professional automotive
               repair and servicing right to your driveway, 7 days a week.
             </p>
           </div>
@@ -34,7 +34,6 @@ export function Footer() {
               <li><Link to="/" className="hover:text-primary-glow transition-smooth">Home</Link></li>
               <li><Link to="/about" className="hover:text-primary-glow transition-smooth">About Us</Link></li>
               <li><Link to="/services" className="hover:text-primary-glow transition-smooth">Services</Link></li>
-              <li><Link to="/blogs" className="hover:text-primary-glow transition-smooth">Blogs</Link></li>
               <li><Link to="/contact" className="hover:text-primary-glow transition-smooth">Contact Us</Link></li>
             </ul>
           </div>
@@ -55,15 +54,18 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-white/70">
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 mt-0.5 text-primary-glow flex-shrink-0" />
-                <a href={`tel:${PHONE_TEL}`} className="hover:text-white">{PHONE_NUMBER}</a>
+                <div className="flex flex-col gap-1">
+                  <a href={`tel:${PHONE_TEL}`} className="hover:text-white">{PHONE_NUMBER}</a>
+                  <a href={`tel:${PHONE_TEL_2}`} className="hover:text-white">{PHONE_NUMBER_2}</a>
+                </div>
               </li>
-              <li className="flex items-start gap-3">
+              <li className="flex items-start gap-3 min-w-0">
                 <Mail className="w-4 h-4 mt-0.5 text-primary-glow flex-shrink-0" />
-                <a href="mailto:contact@roadside-rescue.com.au" className="hover:text-white">contact@roadside-rescue.com.au</a>
+                <a href="mailto:Onsiteautorepairsca@gmail.com" className="hover:text-white break-all">Onsiteautorepairsca@gmail.com</a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 mt-0.5 text-primary-glow flex-shrink-0" />
-                <span>Servicing Canberra and surrounding areas</span>
+                <span>143-1725 32 Ave NE, Calgary, AB T2E 7C8, Canada</span>
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="w-4 h-4 mt-0.5 text-primary-glow flex-shrink-0" />
@@ -78,16 +80,25 @@ export function Footer() {
             © {new Date().getFullYear()} {BRAND_NAME}. All rights reserved.
           </p>
           <div className="flex items-center gap-3">
-            {[Facebook, Instagram, Twitter].map((Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:border-primary-glow hover:text-primary-glow transition-smooth hover:scale-110"
-                aria-label="Social link"
-              >
-                <Icon className="w-4 h-4" />
-              </a>
-            ))}
+            {[
+              { icon: Facebook, href: "#", label: "Facebook" },
+              { icon: Instagram, href: "https://www.instagram.com/onsiteautorepair.ca/?hl=en", label: "Instagram" },
+              { icon: Twitter, href: "#", label: "Twitter" },
+            ].map((social, i) => {
+              const Icon = social.icon;
+              return (
+                <a
+                  key={i}
+                  href={social.href}
+                  target={social.href !== "#" ? "_blank" : undefined}
+                  rel={social.href !== "#" ? "noopener noreferrer" : undefined}
+                  className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:border-primary-glow hover:text-primary-glow transition-smooth hover:scale-110"
+                  aria-label={social.label}
+                >
+                  <Icon className="w-4 h-4" />
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>

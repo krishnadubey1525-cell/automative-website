@@ -10,8 +10,8 @@ import { useEffect, useRef, useState } from "react";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — Roadside Rescue Mobile Mechanic" },
-      { name: "description", content: "Meet the dealership-trained, fully-insured mobile mechanic team behind Roadside Rescue. Over a decade of trusted automotive care." },
+      { title: "About Us — Onsite auto repair Mobile Mechanic" },
+      { name: "description", content: "Meet the dealership-trained, fully-insured mobile mechanic team behind Onsite auto repair. Over a decade of trusted automotive care." },
     ],
   }),
   component: About,
@@ -33,7 +33,7 @@ const stats = [
 const team = [
   { name: "Alex Carter", role: "Lead Mechanic", img: teamAlex },
   { name: "Jordan Hayes", role: "Diagnostics Specialist", img: teamJordan },
-  { name: "Sam Patel", role: "Fleet Technician", img: teamImg },
+  { name: "Sam Patel", role: "Mobile Technician", img: teamImg },
 ];
 
 function useCount(target: number, duration = 1400) {
@@ -89,7 +89,7 @@ function About() {
               Built on <span className="text-primary">trust</span> and craftsmanship.
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              Roadside Rescue was founded with one simple idea: car repairs shouldn't waste your day.
+              Onsite auto repair was founded with one simple idea: car repairs shouldn't waste your day.
               Our dealership-trained mechanics bring a fully-equipped workshop to your driveway,
               office or roadside — delivering the same quality you'd expect from a main dealer,
               without the wait or the mark-up.

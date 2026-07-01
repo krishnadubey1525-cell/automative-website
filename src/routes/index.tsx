@@ -1,23 +1,25 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  Calendar, Phone, Truck, BadgeDollarSign, Clock, Award, Building2, AlertTriangle,
+  Calendar, Phone, Truck, BadgeDollarSign, Clock, Award, AlertTriangle,
   ArrowRight, Star, ShieldCheck,
 } from "lucide-react";
 import { useState, useEffect } from "react";
+import { PHONE_NUMBER, PHONE_TEL, PHONE_NUMBER_2, PHONE_TEL_2 } from "@/components/Header";
 import heroImg from "@/assets/hero-mechanic.jpg";
 import svcMobile from "@/assets/service-mobile.jpg";
 import svcServicing from "@/assets/service-servicing.jpg";
 import svcBrakes from "@/assets/service-brakes.jpg";
 import svcDiag from "@/assets/service-diagnostics.jpg";
 import svcBattery from "@/assets/service-battery.jpg";
-import svcFleet from "@/assets/service-fleet.jpg";
+import gallery1 from "@/assets/gallery-1.jpg";
+import gallery2 from "@/assets/gallery-2.jpg";
 import aboutTeam from "@/assets/about-team.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Roadside Rescue — Mobile Mechanic Canberra · We Come To You" },
-      { name: "description", content: "Canberra's premier mobile mechanic. Same-day servicing, brakes, diagnostics, batteries and roadside repairs at your home, office or roadside." },
+      { title: "Onsite auto repair — Mobile Mechanic Calgary · We Come To You" },
+      { name: "description", content: "Calgary's premier mobile mechanic. Same-day servicing, brakes, diagnostics, batteries and roadside repairs at your home, office or roadside." },
     ],
   }),
   component: Home,
@@ -28,7 +30,7 @@ const features = [
   { icon: BadgeDollarSign, title: "Honest Pricing", desc: "Up-front quotes, no surprises. Pay only for the work you approve.", highlight: false },
   { icon: Clock, title: "Same Day Availability", desc: "Book today, fixed today. Most jobs completed within hours.", highlight: true },
   { icon: Award, title: "Experienced Mechanics", desc: "Dealership-trained technicians with 15+ years of hands-on expertise.", highlight: false },
-  { icon: Building2, title: "Fleet Services", desc: "Keep your business moving with scheduled fleet servicing and reporting.", highlight: false },
+  { icon: ShieldCheck, title: "Full Warranty", desc: "All parts and labor are backed by a comprehensive 12-month warranty.", highlight: false },
   { icon: AlertTriangle, title: "Emergency Repairs", desc: "Stranded? We're on the way. Fast roadside assistance, 7 days a week.", highlight: false },
 ];
 
@@ -45,7 +47,7 @@ const testimonials = [
   { name: "Priya R.", location: "Tuggeranong", text: "Logbook service done at my office while I worked. Couldn't be more convenient.", rating: 5 },
 ];
 
-const gallery = [svcDiag, svcBrakes, svcMobile, svcServicing, svcBattery, svcFleet];
+const gallery = [gallery1, gallery2, svcDiag, svcBrakes, svcMobile, svcServicing];
 
 const heroBackgrounds = [
   heroImg,
@@ -89,10 +91,10 @@ function Home() {
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur text-xs font-semibold uppercase tracking-wider animate-fade-up">
               <ShieldCheck className="w-3.5 h-3.5 text-primary-glow" />
-              Canberra's Premier Mobile Mechanic
+              Calgary's Premier Mobile Mechanic
             </span>
             <h1 className="mt-6 text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] animate-fade-up" style={{ animationDelay: "0.1s" }}>
-              Mobile Mechanic Canberra
+              Mobile Mechanic Calgary
               <span className="block text-primary-glow">We Come To You</span>
             </h1>
             <p className="mt-6 text-lg text-white/80 max-w-2xl animate-fade-up" style={{ animationDelay: "0.2s" }}>
@@ -104,7 +106,7 @@ function Home() {
                 <Calendar className="w-5 h-5" />
                 Book Mobile Mechanic
               </Link>
-              <a href="tel:+61416562596" className="btn-outline-light shine-button">
+              <a href={`tel:${PHONE_TEL}`} className="btn-outline-light shine-button">
                 <Phone className="w-5 h-5" />
                 Call Now
               </a>
@@ -118,7 +120,7 @@ function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14 animate-fade-up">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy">
-              Canberra's <span className="text-primary">Trusted Mobile Mechanics</span>
+              Calgary's <span className="text-primary">Trusted Mobile Mechanics</span>
             </h2>
             <p className="mt-4 text-muted-foreground text-lg">
               Honest service, expert work, and the convenience of having it all done at your doorstep.
@@ -273,7 +275,7 @@ export function CtaBanner() {
           <Link to="/contact" className="btn-primary shine-button">
             <Calendar className="w-5 h-5" /> Book Now
           </Link>
-          <a href="tel:+61416562596" className="btn-outline-light shine-button">
+          <a href={`tel:${PHONE_TEL}`} className="btn-outline-light shine-button">
             <Phone className="w-5 h-5" /> Call Now
           </a>
         </div>
